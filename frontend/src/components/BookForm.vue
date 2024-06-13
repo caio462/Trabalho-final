@@ -2,11 +2,11 @@
   <div class="formulario-livro">
     <h1>Adicionar um Livro</h1>
     <form @submit.prevent="addBook" class="form-adicionar-livro">
-      <input v-model="title" placeholder="Título" class="input-campo"/>
-      <input v-model="author" placeholder="Autor" class="input-campo"/>
-      <input v-model="description" placeholder="Descrição" class="input-campo"/>
-      <input v-model.number="copies" placeholder="Cópias" type="number" class="input-campo"/>
-      <button type="submit" class="botao">Adicionar Livro</button>
+      <input v-model="title" placeholder="Título" class="input-campo" id="input-campo-titulo"/>
+      <input v-model="author" placeholder="Autor" class="input-campo" id="input-campo-Autor"/>
+      <input v-model="description" placeholder="Descrição" class="input-campo" id="input-campo-Descrição"/>
+      <input v-model.number="copies" placeholder="Cópias" type="number" class="input-campo" id="input-campo-Cópias"/>
+      <button type="submit" class="botao" id="input-campo-botao">Adicionar Livro</button>
     </form>
     <div v-if="message" class="mensagem">
       {{ message }}
