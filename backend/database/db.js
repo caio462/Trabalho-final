@@ -10,7 +10,8 @@ db.serialize(() => {
     title TEXT,
     author TEXT,
     description TEXT,
-    copies INTEGER
+    copies INTEGER,
+    imageUrl TEXT
   )`);
 });
 

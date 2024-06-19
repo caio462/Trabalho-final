@@ -6,6 +6,7 @@
       <input v-model="author" placeholder="Autor" class="input-campo" id="input-campo-Autor"/>
       <input v-model="description" placeholder="Descrição" class="input-campo" id="input-campo-Descrição"/>
       <input v-model.number="copies" placeholder="Cópias" type="number" class="input-campo" id="input-campo-Cópias"/>
+      <input v-model="imageUrl" placeholder="URL da Imagem" class="input-campo" id="input-campo-imagem"/>
       <button type="submit" class="botao" id="input-campo-botao">Adicionar Livro</button>
     </form>
     <div v-if="message" class="mensagem">
@@ -22,6 +23,7 @@ export default {
       author: '',
       description: '',
       copies: 0,
+      imageUrl: '',
       message: ''
     };
   },
@@ -36,7 +38,8 @@ export default {
           title: this.title,
           author: this.author,
           description: this.description,
-          copies: this.copies
+          copies: this.copies,
+          imageUrl: this.imageUrl
         })
       }).then(response => response.json())
         .then(data => {
@@ -44,6 +47,7 @@ export default {
           this.author = '';
           this.description = '';
           this.copies = 0;
+          this.imageUrl = '';
           
           this.message = 'Livro adicionado com sucesso!';
           setTimeout(() => {
